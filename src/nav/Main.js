@@ -1,6 +1,7 @@
 
 import React from "react";
-import { BrowserRouter as Route } from "react-router-dom";
+// eslint-disable-next-line
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 import PoliceViz from "../components/policereport";

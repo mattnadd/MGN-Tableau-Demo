@@ -5,7 +5,7 @@ const { tableau } = window;
 
 
 function PoliceViz() {
-  const [url] = useState("https://public.tableau.com/views/HartfordPoliceIncidentsVisualization/Dashboard?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link");
+  const [url] = useState("https://public.tableau.com/views/HartfordPoliceIncidentsVisualization/Dashboard?:language=en-US&:retry=yes&:display_count=n&:origin=viz_share_link");
   const [viz, setViz] = useState(null);
   const options = {
    width: "800px",
