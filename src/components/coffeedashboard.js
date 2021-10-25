@@ -34,9 +34,6 @@ function CoffeeViz() {
   );
 }
 
-const setVizStyle = {
-  width: "1300px",
-  height: "1000px",
-};
+
 
 export default CoffeeViz;
