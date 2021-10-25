@@ -29,7 +29,7 @@ useEffect(activeNav);
 
                     <ul class="side-nav" id="side-nav">
                         <li class="side-nav__item side-nav__item--active">
-                        <Link to="/" class="side-nav__link" aria-current="page">Coffee Chain Profitbility</Link>
+                        <Link to="/" class="side-nav__link" aria-current="page">Coffee Chain Profitability</Link>
                       </li>
                         <li class="side-nav__item">
                         <Link to="/policereport" class="side-nav__link"  aria-current="page">Hartford Police Incidents</Link>
