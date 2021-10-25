@@ -5,20 +5,29 @@ const { tableau } = window;
 
 
 function PoliceViz() {
-  const [url] = useState("https://public.tableau.com/views/HartfordPoliceIncidentsVisualization/Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link");
+  const [url] = useState("https://public.tableau.com/views/HartfordPoliceIncidentsVisualization/Dashboard?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link");
   const [viz, setViz] = useState(null);
   const options = {
-    width: "1400px",
-    height: "800px"
+   width: "800px",
+   height: "800px"
+
     }
 
   const initViz = () => {
     let containerDiv = document.getElementById("container");
     setViz(new tableau.Viz(containerDiv, url, options));
   };
+  const resizeViz = () =>{
+    var width = document.getElementById("container").clientWidth;
+    var height = document.getElementById("container").clientHeight;
+    viz.setFrameSize(width, height);
+};
 
   // eslint-disable-next-line
-  useEffect(initViz, []);
+  useEffect(initViz,()=>{
+    window.addEventListener('resize', resizeViz);
+  }, []);
+
 
   const exportToPDF = () => {
     viz.showExportPDFDialog();
@@ -26,7 +35,6 @@ function PoliceViz() {
 
   return (
     <div>
-      <h1>Export PDF</h1>
       <div  id="container" class="viz"/>
       <button class="btn" onClick={exportToPDF}>Export PDF</button>
 

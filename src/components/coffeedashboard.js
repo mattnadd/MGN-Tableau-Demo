@@ -5,12 +5,12 @@ const { tableau } = window;
 
 
 function CoffeeViz() {
-  const [url] = useState("https://public.tableau.com/views/CoffeeChainProfitbilityDashboard/CoffeeChainFinancialDashboard?:language=en-US&:display_count=n&:origin=viz_share_link");
+  const [url] = useState("https://public.tableau.com/views/CoffeeChainProfitbilityDashboard/CoffeeChainFinancialDashboard?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link");
   const [viz, setViz] = useState(null);
   const options = {
-      width: "1400px",
-      height: "800px"
-  }
+    width: "800px",
+    height: "800px"
+    }
 
   const initViz = () => {
     let containerDiv = document.getElementById("container");
@@ -26,7 +26,6 @@ function CoffeeViz() {
 
   return (
     <div>
-      <h1>Export PDF</h1>
       <div  id="container" class="viz"/>
       <button class="btn" onClick={exportToPDF}>Export PDF</button>
 
