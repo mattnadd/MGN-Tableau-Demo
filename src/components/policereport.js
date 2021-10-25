@@ -4,12 +4,13 @@ import React, { useState, useEffect } from "react";
 const { tableau } = window;
 
 
-function CoffeeViz() {
+function PoliceViz() {
   const [url] = useState("https://public.tableau.com/views/HartfordPoliceIncidentsVisualization/Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link");
   const [viz, setViz] = useState(null);
   const options = {
-      device: "desktop",
-  }
+    width: "1400px",
+    height: "800px"
+    }
 
   const initViz = () => {
     let containerDiv = document.getElementById("container");
@@ -39,4 +40,4 @@ const setVizStyle = {
   height: "1000px",
 };
 
-export default CoffeeViz;
+export default PoliceViz;

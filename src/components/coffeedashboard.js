@@ -8,7 +8,8 @@ function CoffeeViz() {
   const [url] = useState("https://public.tableau.com/views/CoffeeChainProfitbilityDashboard/CoffeeChainFinancialDashboard?:language=en-US&:display_count=n&:origin=viz_share_link");
   const [viz, setViz] = useState(null);
   const options = {
-      device: "desktop",
+      width: "1400px",
+      height: "800px"
   }
 
   const initViz = () => {

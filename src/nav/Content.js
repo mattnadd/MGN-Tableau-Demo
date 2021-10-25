@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import mgnlogo from '../mgnlogo.svg';
 import logo from '../logo.svg';
 import Main from "./Main";
 
 
+
 function Header() {
+  
+const activeNav = () => {
+  var header = document.getElementById("side-nav");
+  var items = header.getElementsByClassName("side-nav__item");
+  for (var i = 0; i < items.length; i++) {
+    items[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("side-nav__item--active");
+    current[0].className = current[0].className.replace(" side-nav__item--active", "");
+    this.className += " side-nav__item--active";
+    });
+  }
+};
+
+useEffect(activeNav);
+
   return (
     <Router>
                 <nav class="sidebar">
                     <img src={mgnlogo} alt="mgn logo" class="logo"/>
 
-                    <ul class="side-nav">
+                    <ul class="side-nav" id="side-nav">
                         <li class="side-nav__item side-nav__item--active">
-                        <NavLink to="/coffeedashboard" class="side-nav__link" activeClassName="side-nav__link" aria-current="page">Coffee Chain Profitbility</NavLink>
+                        <Link to="/" class="side-nav__link" aria-current="page">Coffee Chain Profitbility</Link>
                       </li>
-                        <li class="side-nav__item ">
-                        <div>
-                        <NavLink to="/policereport" class="side-nav__link" activeClassName="side-nav__link" aria-current="page">Hartford Police Incidents</NavLink>
-                        </div>
+                        <li class="side-nav__item">
+                        <Link to="/policereport" class="side-nav__link"  aria-current="page">Hartford Police Incidents</Link>
                         </li>
                     </ul>
 
@@ -30,7 +44,9 @@ function Header() {
                 </nav>
             <Main/>
     </Router>
+
   );
 }
+
 
 export default Header;
