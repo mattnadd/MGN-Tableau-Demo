@@ -39,7 +39,7 @@ useEffect(activeNav);
                     <div class="footer">
                     <div> Buit in</div>
                     <img src={logo} alt="react logo" class=" footer-logo"/>
-                        &copy;{new Date().getFullYear()}  by MGN.
+                        &copy;{new Date().getFullYear()}  by Matt Naddaff.
                     </div>
                 </nav>
             <Main/>
