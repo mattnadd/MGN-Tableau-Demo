@@ -3,17 +3,12 @@ import { BrowserRouter as Router,  Link } from "react-router-dom";
 import mgnlogo from '../mgnlogo.svg';
 import logo from '../logo.svg';
 import Main from "./Main";
-import PropTypes from "prop-types";
 
 
 
 function Header() {
 
-  const propTypes = {
-    match: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
-  };
+
   
 const activeNav = () => {
   var header = document.getElementById("side-nav");
